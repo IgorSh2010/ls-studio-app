@@ -113,35 +113,6 @@ const NewsSection = () => {
       <h2 className="text-3xl font-extrabold text-textPrimary">Aktualności</h2>
     </div>
     <div className="max-w-7xl mx-auto p-6">
-      {role === "admin" && (
-        <div className="bg-bgSecondary p-4 rounded mb-6">
-          <input
-            type="text"
-            placeholder="Tytuł"
-            className="border p-2 w-full mb-2"
-            value={newTitle}
-            onChange={(e) => setNewTitle(e.target.value)}
-          />
-          <textarea
-            placeholder="Treść"
-            className="border p-2 w-full mb-2"
-            value={newContent}
-            onChange={(e) => setNewContent(e.target.value)}
-          ></textarea>
-          <input
-            type="text"
-            placeholder="URL zdjęcia lub filmu"
-            className="border p-2 w-full mb-2"
-            value={newImage}
-            onChange={(e) => setNewImage(e.target.value)}
-          />
-          <Button variant="primary"
-            onClick={addNews}>
-            Dodaj nowość
-          </Button>
-        </div>
-      )}
-
       <div className="grid md:grid-cols-2 gap-4">
         {news.map((item) => (
           <div key={item.id} className="bg-white shadow p-4 rounded">
@@ -156,23 +127,6 @@ const NewsSection = () => {
             )}
             <h3 className="text-xl font-bold">{item.title}</h3>
             <p className="text-gray-700">{item.content}</p>
-
-            {role === "admin" && (
-              <div className="mt-2 flex gap-2">
-                <button
-                  onClick={() => deleteNews(item.id)}
-                  className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
-                >
-                  Usuń
-                </button>
-                <button
-                  onClick={() => updateNews(item.id, { title: prompt("Nowy tytuł:", item.title) })}
-                  className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
-                >
-                  Edytuj
-                </button>
-              </div>
-            )}
           </div>
         ))}
       </div>

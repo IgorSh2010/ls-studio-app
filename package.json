@@ -1,11 +1,10 @@
 {
-  "name": "my-simple-site",
+  "name": "ls-studio-website",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
     "@cloudinary/url-gen": "^1.22.0",
-    "@sanity/client": "^6.29.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
